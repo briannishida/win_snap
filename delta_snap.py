@@ -11,7 +11,7 @@
 #   Registry files are converted into dictionaries before computing deltas
 #
 #   Written by:  Brian Nishida
-#   Date:        
+#   Date:        2019-04-17
 #
 ####################################################################
 
@@ -63,8 +63,8 @@ def reg2dict(file:str) -> dict:
 
 
 # Prompt the user for folders to compute deltas from.  Create a delta folder
-folder1 = input('Enter 1st folder: ')
-folder2 = input('Enter 2nd folder: ')
+folder1 = input('Enter 1st folder (before): ')
+folder2 = input('Enter 2nd folder (after ): ')
 
 # Print out the starting date/time
 now = datetime.datetime.now()
