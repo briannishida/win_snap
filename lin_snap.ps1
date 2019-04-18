@@ -6,7 +6,7 @@
 
 
    Written by:  Brian Nishida
-   Date:        2019-01-25
+   Date:        2019-04-17
 
 
 ############################################################################>
@@ -30,10 +30,10 @@ $snap_files    = $True
 $snap_hashes   = $False
 $snap_livedata = $True
 
-# do not search in /proc (too many changed, useless files) or /mediaq
-$dirlist = @("/bin", "/boot", "/dev", "/etc", "/home", "/lib", "/lib64", `
-	"/lost+found", "/mnt", "/opt", "/root", "/run", "/sbin", "/snap", `
-	"/srv", "/sys", "/tmp", "/usr", "/var")
+# do not search in /proc, /dev, /sys, /snap, /media
+$dirlist = @("/bin", "/boot", "/etc", "/home", "/lib", "/lib64", `
+	"/lost+found", "/mnt", "/opt", "/root", "/run", "/sbin", `
+	"/srv", "/tmp", "/usr", "/var")
 
 $dirlist_hashes = @("/")
 
