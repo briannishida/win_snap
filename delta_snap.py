@@ -11,7 +11,7 @@
 #   Registry files are converted into dictionaries before computing deltas
 #
 #   Written by:  Brian Nishida
-#   Date:        2019-04-17
+#   Date:        2020-09-23
 #
 ####################################################################
 
@@ -31,7 +31,20 @@ psfiles = {'processes.csv':'ascii',
 	'files.csv':'ascii',
 	'folders.csv':'ascii',
 	'filehashes.csv':'ascii', 	
-	'autoruns.csv':'iso8859_15' }
+	'autoruns.csv':'iso8859_15',
+        'auth.log':'ascii',
+	'bash_history':'ascii',
+	'boot.log':'utf-8',
+	'bootstrap.log':'ascii',
+	'dmesg.log':'utf-8',
+	'dpkg.log':'ascii',
+	'journal.log':'utf-8',
+	'kern.log':'ascii',
+	'syslog':'utf-8',
+	'Xorg.0.log':'ascii',
+	'recently-used.xbel':'ascii',
+        'gsettings.txt':'ascii'
+       }
 
 # List of Registry files
 regfiles = ['hkcu.reg', 

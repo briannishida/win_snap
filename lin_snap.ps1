@@ -6,7 +6,7 @@
 
 
    Written by:  Brian Nishida
-   Date:        2019-04-17
+   Date:        2020-09-23
 
 
 ############################################################################>
@@ -27,6 +27,7 @@ Set to $False if you do not want that item snapshot-ed
 #>
 
 $snap_files    = $True
+$snap_logs     = $True
 $snap_hashes   = $False
 $snap_livedata = $True
 
@@ -66,6 +67,27 @@ If($snap_livedata){
     # TCP Connections
     "Writing Network Connections" | Tee-Object summary.txt -Append
     netstat -pant > tcpconnections.csv
+}
+
+
+If($snap_logs){
+	"Writing Logs" | Tee-Object summary.txt -Append
+
+	history > bash_history
+	gsettings list-recursively > gsettings.txt
+
+	journalctl > journal.log
+	
+	cat /var/log/auth.log > auth.log
+	cat /var/log/boot.log > boot.log
+	cat /var/log/bootstrap.log > bootstrap.log
+	cat /var/log/dmesg > dmesg.log
+	cat /var/log/dpkg.log > dpkg.log
+	cat /var/log/kern.log > kern.log
+	cat /var/log/syslog > syslog
+	cat /var/log/Xorg.0.log > Xorg.0.log
+	cat ~/.local/share/recently-used.xbel > recently-used.xbel
+	cat ~/.local/share/gnome-shell/application_state > application_state
 }
 
 
